@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Job.destroy_all
+User.destroy_all
 
 
 puts 'seeding jobs'
@@ -17,6 +18,6 @@ Job.create!(title:"Software Development Intern", salary:75000, description:"Dope
 Job.create!(title:"Software Engineer Internship, Frontend", salary:50000, description:"Could be better", link: "https://us.bebee.com/job/20220509-64c88a02170cbddc649bf779b92ad55b?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic")
 
 
-
+# User.create!(username: "Matt", password_digest: "#{User.digest('password')}" )
 
 puts 'done seeding'
