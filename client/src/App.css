@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
 
-/* *{
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: montserrat, sans-serif;
-}
+} */
 
-.App {
+/* .App {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   background: #f27c56; 
-} */
+}  */
 
 
-form {
+/* form {
   display: block;
   position: center;
 }
@@ -75,7 +75,7 @@ cursor: pointer;
 
 form .form-inner button[type="submit"]:hover {
   background-position: 100% 0%;
-}
+} */
 
 
 
