@@ -30,7 +30,7 @@ function Signup({onLogin}) {
             if(res.ok){
                 res.json().then((user)=> onLogin(user)).then(navigate('/main'))
             } else {
-                res.json().then((err)=> alert(err.errors))
+                res.json().then((err)=> console.log(err))
             }
             })
         }
@@ -66,46 +66,35 @@ function Signup({onLogin}) {
     return (
         <>
             <form onSubmit={handleSignup}>
-                <label>Username</label>
-                <input
-                    type="text"
-                    id="username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                ></input>
-                <label>Password</label>
-                <input
-                    type="password"
-                    id="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                ></input>
-                <label>Confirm Password</label>
-                <input
-                    type="password"
-                    id="confirm-password"
-                    value={passwordConfirmation}
-                    onChange={(e) => setPasswordConfirmation(e.target.value)}
-                ></input>
-                <button type="submit">Submit</button>
+                <div className='form-inner'>
+                    <div className='form-group'>
+                        <label>Username</label>
+                        <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)}></input>
+                    </div>
+                    <div className='form-group'>
+                        <label>Password</label>
+                        <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                    </div>
+                    <div className='form-group'>
+                        <label>Confirm Password</label>
+                        <input type="password" id="confirm-password" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)}></input>
+                    </div>
+                    <button type="submit">Submit</button>
+                </div>
             </form>
 
-            <form onSubmit={handleLogin}>
-                    <label>Username</label>
-                    <input
-                        type="text"
-                        value={loginUserName}
-                        onChange={(e) => setLoginUserName(e.target.value)}
-                    />
-                    <label>Password</label>
-                    <input
-                        type="password"
-                        value={loginPassword}
-                        onChange={(e) => setLoginPassword(e.target.value)}
-                    />
+            {/* <form onSubmit={handleLogin}>
+                <div className='form-inner'>
+                    <div className='form-group'>
+                            <label>Username</label>
+                            <input type="text" value={loginUserName} onChange={(e) => setLoginUserName(e.target.value)}/>
+                            <label>Password</label>
+                            <input type="password" value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)}/>
+                    </div>
                     <button type="submit">Login</button>
-                </form>
-            {/* <div>
+                </div>
+            </form>
+            <div>
                {errors?.map((err) => (
                    <p>{err}</p>
                ))}

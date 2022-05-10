@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+.sum {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f27c56;
+}
+
+.logo {
+    margin-left: 1rem;
+    color: white;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.nav-item {
+    display: flex;
+}
+
+.ul-item {
+    display: flex;
+    margin: 25px;
+}
+
+.li {
+    margin: 1rem;
+}
+
+.a {
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 25px;
+}
+

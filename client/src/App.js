@@ -9,7 +9,7 @@ function App() {
     const [currentUser, setCurrentUser] = useState(null)
    
     return (
-        <>
+        <div className='App'>
             <Router>
                 <Routes>
                     <Route path="/" element={<Signup onLogin={setCurrentUser}/>} />
@@ -19,7 +19,7 @@ function App() {
             </Router>
 
           
-        </>
+        </div>
     );
 }
 export default App;
