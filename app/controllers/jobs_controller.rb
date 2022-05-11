@@ -22,6 +22,6 @@ class JobsController < ApplicationController
     private 
 
     def job_params
-        params.permit(:title, :salary, :description, :link)
+        params.permit(:title, :salary, :description, :link, :logo, :location, :company)
     end
 end

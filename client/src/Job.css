@@ -1,0 +1,12 @@
+.total-card {
+    text-align: center;
+}
+
+.logo-image img{
+
+    display: flex;
+    height: 20%;
+    width: 20%;
+    border-radius: 100%;
+
+}
