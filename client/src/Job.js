@@ -1,8 +1,9 @@
 import './Job.css'
 import { Card } from 'react-bootstrap'
 
-function Job({ description, salary, link, title, logo, company, location }) {
-
+function Job({ title, company, category, logo, description, jobtype, salary, url }) {
+  
+    
     return (
        <Card>
             <Card.Body>
@@ -15,6 +16,21 @@ function Job({ description, salary, link, title, logo, company, location }) {
                 </div>
             </Card.Body>
        </Card>
+                <div>
+                    <h2>{company}</h2>
+                </div>
+                <div>
+                    <h1>{category}</h1>
+                </div>
+                <div className='logo-image'>
+                    <img src={logo} alt="pic of" />
+                </div>
+                <p>${salary}</p>
+                <p>{jobtype}</p>
+                <p>{description}</p>
+                {/* <button onClick={handleWatchlist}>Add to Watch List</button> */}
+            </div>
+        </>
     )
 }
 
