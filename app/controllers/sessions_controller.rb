@@ -20,3 +20,9 @@ class SessionsController < ApplicationController
     head :no_content
   end
 end
+
+# def show
+#   user = User.find_by(username: params[:username])
+#   if user&.authenticate(params[:password]) 
+#     session[]
+# end

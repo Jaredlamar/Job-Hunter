@@ -1,17 +1,48 @@
-import React, {useState} from 'react'
 import './Job.css'
 import { Card, Badge, Button, Collapse } from 'react-bootstrap'
 import ReactMarkdown from 'react-markdown'
+import React, {useContext, useState} from 'react'
+// import { convert } from 'html-to-text'
+import {UserContext} from './Context/user'
 
+function Job({jobOpenings, setWatchList}) {
 
-
-function Job({ title, company, category, logo, description, jobtype, salary, url }) {
-
-    
-    
+    const [toggleDescription, setToggleDescription] = useState(false)
+    const {title, company, category, logo, description, jobtype, salary, url} = jobOpenings
+    const user = useContext(UserContext)
   
-    
+  const desc = description?.replace(/<[^>]+>/g, '')?.substring(0, 100)
+  const wholedesc = description.replace(/<[^>]+>/g, '')
+
+ function handleToggleDescription() {
+    setToggleDescription(!toggleDescription)
+ }
+
+ function handleWatchlist(){
+    setWatchList(jobOpenings)
+        fetch(`/applications`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify({
+                user_id: user.id,
+                job_id: jobOpenings.id
+                
+            })
+        })
+ }
+
+
+// const html = description;
+// const text = convert(html, {
+//   wordwrap: 130
+// });
+// console.log(text); 
+
     return (
+
         
       <Card>
           <Card.Body>
@@ -40,6 +71,25 @@ function Job({ title, company, category, logo, description, jobtype, salary, url
               </Collapse>
           </Card.Body>
       </Card>
+
+    //             {
+    //             !toggleDescription 
+    //             ? 
+    //         <>
+    //             <p>{desc}...</p>
+    //             <button onClick={handleToggleDescription}>Continue Reading</button>
+    //         </>    
+    //             :
+    //         <>
+    //             <p>{wholedesc}</p>
+    //             <button onClick={handleToggleDescription}>See Less</button>
+    //         </>  
+    //             }
+                
+    //             <button onClick={handleWatchlist}>Add to Watch List</button>  
+            
+    //    </>
+
     )
 }
 
