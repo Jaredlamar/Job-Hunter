@@ -1,12 +1,15 @@
 import './App.css';
 import Signup from './Signup';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import Main from './Main';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
 
 function App() {
     const [currentUser, setCurrentUser] = useState(null)
+
+
+   
    
     return (
         <div className='App'>

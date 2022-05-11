@@ -1,12 +1,13 @@
 .total-card {
     text-align: center;
+    padding:40px;
 }
 
 .logo-image img{
 
-    display: flex;
-    height: 20%;
-    width: 20%;
-    border-radius: 100%;
+   
+    width:  100px;
+    height: 100px;
+
 
 }

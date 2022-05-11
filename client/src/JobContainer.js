@@ -1,17 +1,20 @@
 import Job from "./Job";
 import './JobContainer.css'
-function JobContainer({jobOpenings}){
+function JobContainer({jobOpenings, handleWatchlist}){
 
     let mappedJobs = jobOpenings.map((openjob) => {
-        return <Job key={openjob.id} description={openjob.description} salary={openjob.salary} link={openjob.link} title={openjob.title} logo={openjob.logo} location={openjob.location} company={openjob.company} />
+        return <Job handleWatchlist={handleWatchlist} key={openjob.id} title={openjob.title} company={openjob.company} category={openjob.category} logo={openjob.logo} description={openjob.description} salary={openjob.salary} jobtype={openjob.jobtype} url={openjob.url}/>
     
     })
+    
+
 
     return (
+       
         <div className="job-container">
             {mappedJobs}
         </div>
-        
+     
 
     )
 }
