@@ -1,5 +1,7 @@
 import Job from "./Job";
 import './JobContainer.css'
+import {Container} from "react-bootstrap"
+
 function JobContainer({jobOpenings}){
 
     let mappedJobs = jobOpenings.map((openjob) => {
@@ -8,9 +10,9 @@ function JobContainer({jobOpenings}){
     })
 
     return (
-        <div className="job-container">
+        <Container>
             {mappedJobs}
-        </div>
+        </Container>
         
 
     )

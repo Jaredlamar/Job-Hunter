@@ -3,6 +3,7 @@ import Signup from './Signup';
 import React, {useState} from 'react';
 import Main from './Main';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Contact from './Contact';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Signup onLogin={setCurrentUser}/>} />
                     <Route path="/main" element={<Main />}/>
+                    <Route path="/contact" element={<Contact />}/>
                     
                 </Routes>
             </Router>
