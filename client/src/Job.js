@@ -1,14 +1,21 @@
 import './Job.css'
+import { Card } from 'react-bootstrap'
 
 function Job({ title, company, category, logo, description, jobtype, salary, url }) {
   
     
     return (
-        <>
-            <div className='total-card'>
-                <div>
-                    <h3>{title}</h3>
+       <Card>
+            <Card.Body>
+                <div className='d-flex justify content-between'>
+                     <div>
+                         <Card.Title>
+                            {title} - <span className='text-muted font-weight-light'>{company}</span>
+                         </Card.Title>
+                     </div>
                 </div>
+            </Card.Body>
+       </Card>
                 <div>
                     <h2>{company}</h2>
                 </div>
