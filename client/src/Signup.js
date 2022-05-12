@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom"
+import { Button } from 'react-bootstrap'
 import './Signup.css';
 
 function Signup({onLogin}) {
@@ -95,7 +96,7 @@ function Signup({onLogin}) {
                 </div>
             </form>
             <div>
-                    <button onClick={handleToggle}>Already have an account</button>
+                    <Button onClick={handleToggle}>Already have an account</Button>
             </div>
         </div>
         )
@@ -117,7 +118,7 @@ function Signup({onLogin}) {
             
             <button type="submit">Login</button>
         </div>
-        <button onClick={handleToggle} type="submit">Sign Up</button>
+        <Button className='bttn' onClick={handleToggle} type="submit">Sign Up</Button>
         </div>
     </form>   
     <div>

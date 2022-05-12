@@ -19,6 +19,7 @@ function Job({jobOpenings, setWatchList}) {
  }
 
  function handleWatchlist(){
+     const job = {title, company, category, logo, description, jobtype, salary, url}
     setWatchList(jobOpenings)
         fetch(`/applications`, {
             method: "POST",
@@ -27,8 +28,8 @@ function Job({jobOpenings, setWatchList}) {
                 Accept: "application/json"
             },
             body: JSON.stringify({
-                user_id: user.id,
-                job_id: jobOpenings.id
+                job: job,
+                application: {user_id: user.id}
                 
             })
         })
@@ -62,7 +63,7 @@ function Job({jobOpenings, setWatchList}) {
                    <img className='d-none d-md-block' height="75" alt={company}  src={logo}/> 
               </div>
               <Card.Text>
-                <Button  variant="primary" Width="25" >Details</Button> <Button>WatchList</Button>
+                <Button  variant="primary" Width="25" >Details</Button> <Button onClick={handleWatchlist}>WatchList</Button>
               </Card.Text>
               <Collapse >
                 <div className='mt-4'>

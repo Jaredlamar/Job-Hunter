@@ -2,9 +2,11 @@ import Job from "./Job";
 import './JobContainer.css'
 import {Container} from "react-bootstrap"
 
-function JobContainer({jobOpenings, setWatchList}){
+function JobContainer({displayedJobs, setWatchList}){
 
-    let mappedJobs = jobOpenings.map((openjob) => {
+
+
+    let mappedJobs = displayedJobs.map((openjob) => {
         return <Job  key={openjob.id} jobOpenings={openjob} setWatchList={setWatchList}/>
     
     })

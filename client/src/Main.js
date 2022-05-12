@@ -1,10 +1,12 @@
 import React, {useEffect,useState} from 'react'
 import Navbar from './Navbar'
-import JobContainer from './JobContainer';
+import JobContainer from './JobContainer'
+import Search from './Search';
 
 function Main({setWatchList}) {
 
 const [jobOpenings,setJobOpenings]= useState([])
+const [jobSearch, setJobSearch]=useState('')
 
 
 // console.log(jobOpenings)
@@ -27,10 +29,19 @@ useEffect( () => {
         url: job.url
     }))))
 },[])
+const displayedJobs = jobOpenings.filter((jobOpening) => {
+  return jobOpening.title.toLowerCase().includes(jobSearch.toLowerCase());
+});
+
   return (
     <div>
         <Navbar />
-        <JobContainer jobOpenings={jobOpenings} setWatchList={setWatchList} />
+        <div>
+          <Search jobSearch = {jobSearch} onSearchChange={setJobSearch}/>
+        </div>
+        <div>
+          <JobContainer displayedJobs={displayedJobs} setWatchList={setWatchList} />
+        </div>
     </div>
   )
 }

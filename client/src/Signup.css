@@ -62,7 +62,7 @@
   
   form .form-inner button[type="submit"] {
   display: inline-block;
-  padding: 10px 15px;
+  padding: 2px 15px;
   border-radius: 8px;
   background-image: linear-gradient(to right, #020024 50%, #8989a3 50%, #00d4ff);
   background-size: 200%;
@@ -77,4 +77,5 @@
     background-position: 100% 0%;
   }
 
+  
 

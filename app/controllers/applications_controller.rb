@@ -11,7 +11,8 @@ class ApplicationsController < ApplicationController
     end
 
     def create 
-        application = Application.create(application_params)
+        job = Job.find_or_create_by!(job_params)
+        application = job.applications.create!(application_params)
         render json: application, status: :created
     end
 
@@ -24,7 +25,11 @@ class ApplicationsController < ApplicationController
     private 
 
     def application_params
-        params.permit(:user_id)
+        params.require(:application).permit(:user_id)
+    end
+
+    def job_params
+        params.require(:job).permit(:title, :company, :category, :logo, :description, :jobtype, :salary, :url)
     end
 
 end
