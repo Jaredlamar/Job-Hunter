@@ -1,8 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './Navbar.css'
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
+
+    let navigate = useNavigate()
+
+    function handleLogout(){
+
+        fetch(`logout/`, {
+            method: "DELETE"
+        })
+        .catch( error => console.log(error.message))
+        .then(navigate('/'))
+
+    }
+
   return (
     <div className='sum'>
         <div className='logo'>
@@ -17,10 +31,10 @@ function Navbar() {
                     <Link className='a' to="/watchList">WatchList</Link>
                 </li>
                 <li className='li'>
-                    <Link className='a' to="/postJob">Post Job</Link>
+                <Link className='a' to="/contact">Contact</Link>
                 </li>
                 <li className='li'>
-                    <Link className='a' to="/contact">Contact</Link>
+                    <button onClick={handleLogout}className='ab' to="/"  >Logout</button>
                 </li>
             </ul>
         </nav>

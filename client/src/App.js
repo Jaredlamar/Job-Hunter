@@ -12,6 +12,7 @@ function App() {
     const [currentUser, setCurrentUser] = useState(null)
     const [watchList, setWatchList] = useState([])
 
+
     // console.log(watchList)
 
 
@@ -22,8 +23,8 @@ function App() {
         <div className='App'>
             <Router>
                 <Routes>
-                    <Route path="/" element={<Signup onLogin={setCurrentUser}/>} />
-                    <Route path="/main" element={<Main setWatchList={setWatchList}/>}/>
+                    <Route path="/" element={<Signup onLogin={setCurrentUser}/>} currentUser={currentUser}/>
+                    <Route path="/main" element={<Main setWatchList={setWatchList}/>} />
                     <Route path="/contact" element={<Contact />}/>
                     <Route path="/watchlist" element={<WatchList watchList={watchList}/>}/>
                     

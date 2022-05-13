@@ -1,6 +1,5 @@
 import './Job.css'
 import { Card, Badge, Button, Collapse } from 'react-bootstrap'
-import ReactMarkdown from 'react-markdown'
 import React, {useContext, useState} from 'react'
 // import { convert } from 'html-to-text'
 import {UserContext} from './Context/user'
@@ -11,7 +10,7 @@ function Job({jobOpenings, setWatchList}) {
     const {title, company, category, logo, description, jobtype, salary, url} = jobOpenings
     const user = useContext(UserContext)
   
-  const desc = description?.replace(/<[^>]+>/g, '')?.substring(0, 100)
+  const desc = description?.replace(/<[^>]+>/g, '')?.substring(0, 200)
   const wholedesc = description.replace(/<[^>]+>/g, '')
 
  function handleToggleDescription() {
@@ -63,33 +62,24 @@ function Job({jobOpenings, setWatchList}) {
                    <img className='d-none d-md-block' height="75" alt={company}  src={logo}/> 
               </div>
               <Card.Text>
-                <Button  variant="primary" Width="25" >Details</Button> <Button onClick={handleWatchlist}>WatchList</Button>
+                <Button  onClick={handleToggleDescription} variant="primary" Width="25" >Details</Button> <Button onClick={handleWatchlist}>WatchList</Button>
+                {
+                !toggleDescription 
+                ? 
+            <>
+                <p>{desc}...</p>
+            
+            </>    
+                :
+            <>
+                <p>{wholedesc}</p>
+                <Button onClick={handleToggleDescription}>See Less</Button>
+            </>  
+                }
               </Card.Text>
-              <Collapse >
-                <div className='mt-4'>
-                  <Card.Text>{description}</Card.Text>
-                </div>
-              </Collapse>
           </Card.Body>
       </Card>
 
-    //             {
-    //             !toggleDescription 
-    //             ? 
-    //         <>
-    //             <p>{desc}...</p>
-    //             <button onClick={handleToggleDescription}>Continue Reading</button>
-    //         </>    
-    //             :
-    //         <>
-    //             <p>{wholedesc}</p>
-    //             <button onClick={handleToggleDescription}>See Less</button>
-    //         </>  
-    //             }
-                
-    //             <button onClick={handleWatchlist}>Add to Watch List</button>  
-            
-    //    </>
 
     )
 }

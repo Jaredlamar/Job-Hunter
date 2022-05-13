@@ -3,12 +3,12 @@ import { useNavigate } from "react-router-dom"
 import { Button } from 'react-bootstrap'
 import './Signup.css';
 
-function Signup({onLogin}) {
+function Signup({onLogin, currentUser}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
-    const [loginUserName, setLoginUserName] = useState("")
-    const [loginPassword, setLoginPassword] = useState("")
+    // const [loginUserName, setLoginUserName] = useState("")
+    // const [loginPassword, setLoginPassword] = useState("")
     const [errors, setErrors]= useState([])
     const [toggle, setToggle] = useState(false)
 
@@ -21,16 +21,17 @@ function Signup({onLogin}) {
 
     function handleSignup(e) {
         e.preventDefault();
+        const user = {
+            username,
+            password,
+            password_confirmation: passwordConfirmation
+        }
         fetch("/signup", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-                username,
-                password,
-                password_confirmation: passwordConfirmation,
-            }),
+            body: JSON.stringify(user),
         })
         .then(res => {
 
@@ -46,23 +47,24 @@ function Signup({onLogin}) {
 
     function handleLogin(e) {
         e.preventDefault();
+        const user = {
+            username: username,
+            password
+        }
         console.log('clicked')
         fetch("/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-                loginUserName,
-                loginPassword,
-            })
+            body: JSON.stringify(user)
         })
             .then(res => {
 
                 if(res.ok){
                     res.json().then((user)=> onLogin(user)).then(navigate('/main'))
                 } else {
-                    res.json().then((err)=> alert(err.message))
+                    res.json().then((err)=> alert(err.error))
                 }
                 })
             }
@@ -72,6 +74,7 @@ function Signup({onLogin}) {
 
     return (
         <>
+        
         {
         !toggle 
         ? 
@@ -110,11 +113,11 @@ function Signup({onLogin}) {
             <div className='form-group'>
                     <label>Username</label>
                     </div>
-                    <input type="text" value={loginUserName} onChange={(e) => setLoginUserName(e.target.value)}/>
+                    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)}/>
                     <div className='form-group'>
                     <label>Password</label>
                     </div>
-                    <input type="password" value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)}/>
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
             
             <button type="submit">Login</button>
         </div>
