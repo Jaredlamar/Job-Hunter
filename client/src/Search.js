@@ -8,7 +8,7 @@ function Search({jobSearch,onSearchChange }) {
     <input
       type="text"
       id="search"
-      placeholder="Type a name to search..."
+      placeholder="                                                              Search Job Title..."
       value = {jobSearch}
       onChange={(e) =>onSearchChange(e.target.value)}
     />

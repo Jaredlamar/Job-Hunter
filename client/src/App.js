@@ -12,7 +12,7 @@ function App() {
     const [currentUser, setCurrentUser] = useState(null)
     const [watchList, setWatchList] = useState([])
 
-    // console.log(watchList)
+    
 
 
    

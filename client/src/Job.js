@@ -9,7 +9,8 @@ function Job({jobOpenings, setWatchList}) {
 
     const [toggleDescription, setToggleDescription] = useState(false)
     const {title, company, category, logo, description, jobtype, salary, url} = jobOpenings
-    const user = useContext(UserContext)
+    const [user, setUser] = useContext(UserContext)
+    
   
   const desc = description?.replace(/<[^>]+>/g, '')?.substring(0, 100)
   const wholedesc = description.replace(/<[^>]+>/g, '')
@@ -34,6 +35,7 @@ function Job({jobOpenings, setWatchList}) {
             })
         })
  }
+ console.log(jobOpenings)
 
 
 // const html = description;
@@ -65,11 +67,6 @@ function Job({jobOpenings, setWatchList}) {
               <Card.Text>
                 <Button  variant="primary" Width="25" >Details</Button> <Button onClick={handleWatchlist}>WatchList</Button>
               </Card.Text>
-              <Collapse >
-                <div className='mt-4'>
-                  <Card.Text>{description}</Card.Text>
-                </div>
-              </Collapse>
           </Card.Body>
       </Card>
 

@@ -8,8 +8,9 @@ function JobContainer({displayedJobs, setWatchList}){
 
     let mappedJobs = displayedJobs.map((openjob) => {
         return <Job  key={openjob.id} jobOpenings={openjob} setWatchList={setWatchList}/>
-    
+        
     })
+    
     
 
 

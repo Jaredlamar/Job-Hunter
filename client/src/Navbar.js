@@ -17,9 +17,6 @@ function Navbar() {
                     <Link className='a' to="/watchList">WatchList</Link>
                 </li>
                 <li className='li'>
-                    <Link className='a' to="/postJob">Post Job</Link>
-                </li>
-                <li className='li'>
                     <Link className='a' to="/contact">Contact</Link>
                 </li>
             </ul>

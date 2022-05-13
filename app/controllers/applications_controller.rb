@@ -25,7 +25,9 @@ class ApplicationsController < ApplicationController
     private 
 
     def application_params
+        
         params.require(:application).permit(:user_id)
+
     end
 
     def job_params
