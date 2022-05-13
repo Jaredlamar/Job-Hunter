@@ -14,7 +14,8 @@ function Contact() {
               console.log(result.text);
           }, (error) => {
               console.log(error.text);
-          });
+          })
+          .then(alert("Your email has been sent"));
           e.target.reset()
       };
         return (
@@ -36,7 +37,7 @@ function Contact() {
                             </div>
                             <div className='form-group'>
                                 <label>Message</label>
-                                <input type="textfield" name="message" ></input>
+                                <textarea type="textfield" name="message">  </textarea>
                             </div>
                         <button type="submit">Submit</button>
                         </div>
