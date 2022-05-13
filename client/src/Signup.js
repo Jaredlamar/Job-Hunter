@@ -99,7 +99,7 @@ function Signup({onLogin, currentUser}) {
                 </div>
             </form>
             <div>
-                    <Button onClick={handleToggle}>Already have an account</Button>
+                    <button className='Omega' onClick={handleToggle}>login</button>
             </div>
         </div>
         )
@@ -121,7 +121,7 @@ function Signup({onLogin, currentUser}) {
             
             <button type="submit">Login</button>
         </div>
-        <Button className='bttn' onClick={handleToggle} type="submit">Sign Up</Button>
+        <button className='Omega' onClick={handleToggle} type="submit">Sign Up</button>
         </div>
     </form>   
     <div>

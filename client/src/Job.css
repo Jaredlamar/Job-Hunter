@@ -39,4 +39,31 @@
     background-size: 400%;
 }
 
+.Omega{
+    position: relative;
+    height: 30px;
+    width: 130px;
+    margin: 0px 20px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background: #111;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    
+}
+
+.Omega:first-child:hover{
+    background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b);
+    background-size: 400%;
+}
+
+.Omega:last-child:hover{
+    background: linear-gradient(90deg, #fa7199, #f5ce62, #e43603, #fa7199);
+    background-size: 400%;
+}
+
 
