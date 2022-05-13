@@ -8,7 +8,8 @@ function Job({jobOpenings, setWatchList}) {
 
     const [toggleDescription, setToggleDescription] = useState(false)
     const {title, company, category, logo, description, jobtype, salary, url} = jobOpenings
-    const user = useContext(UserContext)
+    const [user, setUser] = useContext(UserContext)
+    
   
   const desc = description?.replace(/<[^>]+>/g, '')?.substring(0, 200)
   const wholedesc = description.replace(/<[^>]+>/g, '')
@@ -33,6 +34,7 @@ function Job({jobOpenings, setWatchList}) {
             })
         })
  }
+ console.log(jobOpenings)
 
 
 // const html = description;

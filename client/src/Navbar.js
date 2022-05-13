@@ -35,6 +35,7 @@ function Navbar() {
                 </li>
                 <li className='li'>
                     <button onClick={handleLogout}className='ab' to="/"  >Logout</button>
+
                 </li>
             </ul>
         </nav>

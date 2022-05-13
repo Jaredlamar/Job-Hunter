@@ -13,7 +13,7 @@ function Signup({onLogin, currentUser}) {
     const [toggle, setToggle] = useState(false)
 
     let navigate = useNavigate()
-    console.log(errors)
+    
 
     function handleToggle(){
         setToggle(!toggle)

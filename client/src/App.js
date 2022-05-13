@@ -12,8 +12,12 @@ function App() {
     const [currentUser, setCurrentUser] = useState(null)
     const [watchList, setWatchList] = useState([])
 
+<<<<<<< HEAD
 
     // console.log(watchList)
+=======
+    
+>>>>>>> 2379def26af288cffa73501bb718629d1054e17c
 
 
    
