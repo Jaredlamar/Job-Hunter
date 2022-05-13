@@ -37,9 +37,14 @@
   
   form .form-inner{
     position: relative;
+    border-radius: 25px;
     display: block;
     background-color: #FFF;
-    padding: 30px;
+    padding-top: 20px;
+    padding-left: 85px;
+    padding-bottom: 20px;
+    padding-right: -20px;
+
     z-index: 2;
   }
   
@@ -63,7 +68,8 @@
   
   form .form-inner button[type="submit"] {
   display: inline-block;
-  padding: 2px 15px;
+  height: 40px;
+  padding: 0px 15px;
   border-radius: 8px;
   background-image: linear-gradient(to right, #020024 50%, #8989a3 50%, #00d4ff);
   background-size: 200%;
